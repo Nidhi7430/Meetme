@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import BannerCard from "../bannerCard/BannerCard";
+import BannerCard from "./bannerCard/BannerCard";
 
 const Banner = () => {
   return (
