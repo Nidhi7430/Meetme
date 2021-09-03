@@ -1,6 +1,6 @@
 import React from "react";
 import TabPanel from "../../tabPanel/TabPanel";
-import { makeStyles, Typography, Slider } from "@material-ui/core";
+import { makeStyles, Typography, Box, Grid, Slider } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -8,47 +8,63 @@ const useStyles = makeStyles({
   },
 });
 
-function valuetext(value) {
-  return `${value}°C`;
-}
-
 const marks = [
   {
-    value: 0,
-    label: "0°C",
+    value: 25,
+    label: (
+      <>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          style={{ position: "absolute", left: -75, top: -40 }}
+        >
+          <Box marginRight={4} style={{ backgroundColor: "red" }}>
+            2017
+          </Box>
+          {/* <Box width={60}></Box> */}
+          <Box marginLeft={4} style={{ backgroundColor: "red" }}>
+            <p>GEC Gandhinagar</p>
+            <p>GEC Gandhinagar</p>
+          </Box>
+        </Box>
+      </>
+    ),
   },
   {
-    value: 20,
-    label: "20°C",
+    value: 75,
+    label: <h2>World</h2>,
   },
+
   {
-    value: 37,
-    label: "37°C",
-  },
-  {
-    value: 100,
-    label: "100°C",
+    value: 90,
+    label: <h2>Nidhi</h2>,
   },
 ];
 const Experience = (props) => {
   const classes = useStyles();
-  const temp = () => <div>hello</div>;
 
   return (
     <>
       <TabPanel value={props.value} index={props.index}>
-        <React.Fragment>
+        <Box
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          style={{ textAlign: "center" }}
+        >
           <div className={classes.root}>
             <Slider
               orientation="vertical"
-              defaultValue={[20, 37]}
-              aria-labelledby="vertical-slider"
-              getAriaValueText={valuetext}
+              min={0}
+              max={100}
+              disabled
+              defaultValue={marks.map((x) => x.value)}
               marks={marks}
-              ThumbComponent={temp}
+              track={false}
             />
           </div>
-        </React.Fragment>
+        </Box>
       </TabPanel>
     </>
   );
