@@ -1,12 +1,15 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
-import Link from "@material-ui/core/Link";
+import {
+  makeStyles,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  MenuItem,
+  Link,
+  Container,
+} from "@material-ui/core";
 import MoreIcon from "@material-ui/icons/MoreVert";
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -70,36 +73,38 @@ const Header = () => {
           position="fixed"
           style={{ background: "transparent", boxShadow: "none" }}
         >
-          <Toolbar>
-            <Typography className={classes.title} variant="h6" noWrap>
-              Material-UI
-            </Typography>
-            <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
-              <Typography className={classes.root}>
-                <Link href="#" color="inherit">
-                  Home
-                </Link>
-                <Link href="#" color="inherit">
-                  Home
-                </Link>
-                <Link href="#" color="inherit">
-                  Home
-                </Link>
+          <Container>
+            <Toolbar style={{ padding: 0 }}>
+              <Typography className={classes.title} variant="h6" noWrap>
+                Material-UI
               </Typography>
-            </div>
-            <div className={classes.sectionMobile}>
-              <IconButton
-                aria-label="show more"
-                aria-controls={mobileMenuId}
-                aria-haspopup="true"
-                onClick={handleMobileMenuOpen}
-                color="inherit"
-              >
-                <MoreIcon />
-              </IconButton>
-            </div>
-          </Toolbar>
+              <div className={classes.grow} />
+              <div className={classes.sectionDesktop}>
+                <Typography className={classes.root}>
+                  <Link href="#" color="inherit">
+                    Home
+                  </Link>
+                  <Link href="#" color="inherit">
+                    Home
+                  </Link>
+                  <Link href="#" color="inherit">
+                    Home
+                  </Link>
+                </Typography>
+              </div>
+              <div className={classes.sectionMobile}>
+                <IconButton
+                  aria-label="show more"
+                  aria-controls={mobileMenuId}
+                  aria-haspopup="true"
+                  onClick={handleMobileMenuOpen}
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
+              </div>
+            </Toolbar>
+          </Container>
         </AppBar>
         {renderMobileMenu}
       </div>

@@ -10,10 +10,7 @@ import {
   Typography,
   Container,
 } from "@material-ui/core";
-import CalendarTodayOutlinedIcon from "@material-ui/icons/CalendarTodayOutlined";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import CallOutlinedIcon from "@material-ui/icons/CallOutlined";
-
 import linkedin from "../../../images/linkedin.png";
 import github from "../../../images/github.png";
 import portfolio1 from "../../../images/portfolio1.jpg";
@@ -103,15 +100,6 @@ const BannerCard = () => {
                     </Box>
                   </Typography>
                   <List component="nav" aria-label="contacts">
-                    <BannerCardList
-                      text="7th April,1996"
-                      icon={<CalendarTodayOutlinedIcon color="primary" />}
-                    />
-                    <BannerCardList
-                      linkHref="tel:8511839581"
-                      text="+91 8511839581"
-                      icon={<CallOutlinedIcon color="primary" />}
-                    />
                     <BannerCardList
                       linkHref="mailto:nidhipatel439@gmail.com"
                       text="nidhipatel439@gmail.com"

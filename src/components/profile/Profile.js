@@ -12,6 +12,29 @@ import {
   withStyles,
 } from "@material-ui/core";
 
+function valuetext(value) {
+  return `${value}°C`;
+}
+
+const marks = [
+  {
+    value: 0,
+    label: "Front end developer",
+  },
+  {
+    value: 20,
+    label: "digital",
+  },
+  {
+    value: 37,
+    label: "37°C",
+  },
+  {
+    value: 100,
+    label: "100°C",
+  },
+];
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -69,44 +92,46 @@ const Profile = () => {
   };
   return (
     <>
-      <Container
+      <Box
         style={{
           backgroundImage: "linear-gradient(90deg, #766dff 0%, #88f3ff 100%)",
         }}
+        py={10}
       >
-        <AppBar
-          position="static"
-          style={{ background: "transparent", boxShadow: "none" }}
-        >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="simple tabs example"
-            centered
+        <Container>
+          <AppBar
+            position="static"
+            style={{ background: "transparent", boxShadow: "none" }}
           >
-            <Tab
-              label="My Experience"
-              {...a11yProps(0)}
-              style={{
-                background: "rgba(255, 255, 255, 0.1)",
-                borderRadius: "5px",
-                margin: "10px",
-              }}
-            />
-            <Tab
-              label="My Education"
-              {...a11yProps(1)}
-              style={{
-                background: "rgba(255, 255, 255, 0.1)",
-                borderRadius: "5px",
-                margin: "10px",
-              }}
-            />
-          </Tabs>
-        </AppBar>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              aria-label="simple tabs example"
+              centered
+            >
+              <Tab
+                label="My Experience"
+                {...a11yProps(0)}
+                style={{
+                  background: "rgba(255, 255, 255, 0.1)",
+                  borderRadius: "5px",
+                  margin: "10px",
+                }}
+              />
+              <Tab
+                label="My Education"
+                {...a11yProps(1)}
+                style={{
+                  background: "rgba(255, 255, 255, 0.1)",
+                  borderRadius: "5px",
+                  margin: "10px",
+                }}
+              />
+            </Tabs>
+          </AppBar>
 
-        <TabPanel value={value} index={0}>
-          <Grid
+          <TabPanel value={value} index={0}>
+            {/* <Grid
             container
             direction="row"
             justifyContent="center"
@@ -153,54 +178,64 @@ const Profile = () => {
                 design.
               </Box>
             </Grid>
-          </Grid>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <Grid
-            container
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-            style={{ textAlign: "center" }}
-          >
-            <Grid item sm={3} style={{ textAlign: "right" }}>
-              2017
+          </Grid> */}
+            <Slider
+              orientation="vertical"
+              defaultValue={[20, 37]}
+              aria-labelledby="vertical-slider"
+              getAriaValueText={valuetext}
+              marks={marks}
+              disabled
+              style={{ height: "300px" }}
+            />
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <Grid
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              style={{ textAlign: "center" }}
+            >
+              <Grid item sm={3} style={{ textAlign: "right" }}>
+                2017
+              </Grid>
+              <Grid item sm={1}>
+                <PrettoSlider
+                  disabled
+                  orientation="vertical"
+                  defaultValue={50}
+                  aria-labelledby="vertical-slider"
+                  style={{ height: 180 }}
+                />
+              </Grid>
+              <Grid item sm={3} style={{ textAlign: "left" }}>
+                <Box
+                  fontSize="subtitle1.fontSize"
+                  color="textPrimary"
+                  style={{ textTransform: "uppercase" }}
+                  letterSpacing={1.6}
+                  mb={1}
+                  fontWeight={500}
+                >
+                  Bachelor of Engineering : I.T
+                </Box>
+                <Box
+                  fontSize="subtitle2.fontSize"
+                  color="textPrimary"
+                  letterSpacing={1.8}
+                  mb={1}
+                >
+                  (Vishwakarma Government Engineering College (GTU))
+                </Box>
+                <Box fontSize="body2.fontSize" color="textPrimary">
+                  Aggregate : 7.73
+                </Box>
+              </Grid>
             </Grid>
-            <Grid item sm={1}>
-              <PrettoSlider
-                disabled
-                orientation="vertical"
-                defaultValue={50}
-                aria-labelledby="vertical-slider"
-                style={{ height: 180 }}
-              />
-            </Grid>
-            <Grid item sm={3} style={{ textAlign: "left" }}>
-              <Box
-                fontSize="subtitle1.fontSize"
-                color="textPrimary"
-                style={{ textTransform: "uppercase" }}
-                letterSpacing={1.6}
-                mb={1}
-                fontWeight={500}
-              >
-                Bachelor of Engineering : I.T
-              </Box>
-              <Box
-                fontSize="subtitle2.fontSize"
-                color="textPrimary"
-                letterSpacing={1.8}
-                mb={1}
-              >
-                (Vishwakarma Government Engineering College (GTU))
-              </Box>
-              <Box fontSize="body2.fontSize" color="textPrimary">
-                Aggregate : 7.73
-              </Box>
-            </Grid>
-          </Grid>
-        </TabPanel>
-      </Container>
+          </TabPanel>
+        </Container>
+      </Box>
     </>
   );
 };
