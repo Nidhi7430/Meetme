@@ -3,14 +3,14 @@ import {
   makeStyles,
   AppBar,
   Toolbar,
-  IconButton,
+  // IconButton,
   Typography,
   Menu,
   MenuItem,
-  Link,
+  // Link,
   Container,
 } from "@material-ui/core";
-import MoreIcon from "@material-ui/icons/MoreVert";
+// import MoreIcon from "@material-ui/icons/MoreVert";
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -76,10 +76,10 @@ const Header = () => {
           <Container>
             <Toolbar style={{ padding: 0 }}>
               <Typography className={classes.title} variant="h6" noWrap>
-                Material-UI
+                Meetme
               </Typography>
               <div className={classes.grow} />
-              <div className={classes.sectionDesktop}>
+              {/* <div className={classes.sectionDesktop}>
                 <Typography className={classes.root}>
                   <Link href="#" color="inherit">
                     Home
@@ -102,11 +102,11 @@ const Header = () => {
                 >
                   <MoreIcon />
                 </IconButton>
-              </div>
+              </div> */}
             </Toolbar>
           </Container>
         </AppBar>
-        {renderMobileMenu}
+        {/* {renderMobileMenu} */}
       </div>
     </>
   );

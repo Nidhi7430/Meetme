@@ -1,4 +1,3 @@
-import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/home/HomePage.js";
 import Header from "./components/header/Header.js";
@@ -8,14 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <Switch>
-        <Route exact path="/HomePage">
-          <HomePage />
-        </Route>
-        <Route exact path="/*">
-          <Redirect to="/HomePage" />
-        </Route>
-      </Switch>
+      <HomePage />
       <Footer />
     </>
   );
