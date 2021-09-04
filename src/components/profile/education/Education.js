@@ -1,15 +1,18 @@
 import React from "react";
-import { Grid, Box, Slider, withStyles } from "@material-ui/core";
 import TabPanel from "../../tabPanel/TabPanel";
+import { makeStyles, withStyles, Box, Slider } from "@material-ui/core";
+import ProfileList from "../profileList/ProfileList";
 
+const useStyles = makeStyles({
+  root: {
+    height: 350,
+  },
+});
 const PrettoSlider = withStyles({
   thumb: {
     minHeight: 10,
     minWidth: 10,
     backgroundColor: "rgba(255, 255, 255,0.7)",
-  },
-  track: {
-    display: "none",
   },
   rail: {
     height: 50,
@@ -18,54 +21,61 @@ const PrettoSlider = withStyles({
     background: "rgba(255, 255, 255,0.6)",
   },
 })(Slider);
+const marks = [
+  {
+    value: 15,
+    label: (
+      <ProfileList
+        year="2011"
+        field="S.S.C"
+        college="(M.B.Patel High School (G.S.E.B))"
+        mark="Percentile Rank : 99.54"
+      />
+    ),
+  },
+  {
+    value: 50,
+    label: (
+      <ProfileList
+        year="2013"
+        field="H.S.C (science)"
+        college="(M.B.Patel High School (G.S.H.E.B))"
+        mark="Percentile Rank : 76.42"
+      />
+    ),
+  },
 
+  {
+    value: 85,
+    label: (
+      <ProfileList
+        year="2017"
+        field="Bachelor of Engineering : I.T"
+        college="(Vishwakarma Government Engineering College (GTU))"
+        mark="Aggregate : 7.73"
+      />
+    ),
+  },
+];
 const Education = (props) => {
+  const classes = useStyles();
+
   return (
     <>
       <TabPanel value={props.value} index={props.index}>
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          style={{ textAlign: "center" }}
-        >
-          <Grid item sm={3} style={{ textAlign: "right" }}>
-            2017
-          </Grid>
-          <Grid item sm={1}>
+        <Box direction="row" style={{ textAlign: "center" }} marginRight={-3}>
+          <div className={classes.root}>
             <PrettoSlider
-              disabled
               orientation="vertical"
-              defaultValue={50}
-              aria-labelledby="vertical-slider"
-              style={{ height: 180 }}
+              min={0}
+              max={100}
+              disabled
+              defaultValue={marks.map((x) => x.value)}
+              marks={marks}
+              track={false}
             />
-          </Grid>
-          <Grid item sm={3} style={{ textAlign: "left" }}>
-            <Box
-              fontSize="subtitle1.fontSize"
-              color="textPrimary"
-              style={{ textTransform: "uppercase" }}
-              letterSpacing={1.6}
-              mb={1}
-              fontWeight={500}
-            >
-              Bachelor of Engineering : I.T
-            </Box>
-            <Box
-              fontSize="subtitle2.fontSize"
-              color="textPrimary"
-              letterSpacing={1.8}
-              mb={1}
-            >
-              (Vishwakarma Government Engineering College (GTU))
-            </Box>
-            <Box fontSize="body2.fontSize" color="textPrimary">
-              Aggregate : 7.73
-            </Box>
-          </Grid>
-        </Grid>
+          </div>
+        </Box>
       </TabPanel>
     </>
   );

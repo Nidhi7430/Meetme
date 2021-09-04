@@ -15,12 +15,16 @@ const Profile = () => {
         style={{
           backgroundImage: "linear-gradient(90deg, #766dff 0%, #88f3ff 100%)",
         }}
-        py={10}
+        py={12}
       >
         <Container>
           <AppBar
             position="static"
-            style={{ background: "transparent", boxShadow: "none" }}
+            style={{
+              background: "transparent",
+              boxShadow: "none",
+              paddingBottom: 25,
+            }}
           >
             <Tabs
               value={value}

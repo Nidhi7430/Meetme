@@ -5,8 +5,8 @@ import {
   Toolbar,
   // IconButton,
   Typography,
-  Menu,
-  MenuItem,
+  // Menu,
+  // MenuItem,
   // Link,
   Container,
 } from "@material-ui/core";
@@ -35,34 +35,34 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Header = () => {
   const classes = useStyles();
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  // const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  // const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
+  // const handleMobileMenuClose = () => {
+  //   setMobileMoreAnchorEl(null);
+  // };
 
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
+  // const handleMobileMenuOpen = (event) => {
+  //   setMobileMoreAnchorEl(event.currentTarget);
+  // };
 
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>Home</MenuItem>
-      <MenuItem>Home</MenuItem>
-      <MenuItem>Home</MenuItem>
-    </Menu>
-  );
+  // const mobileMenuId = "primary-search-account-menu-mobile";
+  // const renderMobileMenu = (
+  //   <Menu
+  //     anchorEl={mobileMoreAnchorEl}
+  //     anchorOrigin={{ vertical: "top", horizontal: "right" }}
+  //     id={mobileMenuId}
+  //     keepMounted
+  //     transformOrigin={{ vertical: "top", horizontal: "right" }}
+  //     open={isMobileMenuOpen}
+  //     onClose={handleMobileMenuClose}
+  //   >
+  //     <MenuItem>Home</MenuItem>
+  //     <MenuItem>Home</MenuItem>
+  //     <MenuItem>Home</MenuItem>
+  //   </Menu>
+  // );
   return (
     <>
       <div

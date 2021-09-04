@@ -1,44 +1,37 @@
 import React from "react";
 import TabPanel from "../../tabPanel/TabPanel";
-import { makeStyles, Typography, Box, Grid, Slider } from "@material-ui/core";
+import { makeStyles, withStyles, Box, Slider } from "@material-ui/core";
+import ProfileList from "../profileList/ProfileList";
 
 const useStyles = makeStyles({
   root: {
-    height: 300,
+    height: 170,
   },
 });
-
+const PrettoSlider = withStyles({
+  thumb: {
+    minHeight: 10,
+    minWidth: 10,
+    backgroundColor: "rgba(255, 255, 255,0.7)",
+  },
+  rail: {
+    height: 50,
+    borderRadius: 10,
+    minWidth: "20%",
+    background: "rgba(255, 255, 255,0.6)",
+  },
+})(Slider);
 const marks = [
   {
-    value: 25,
+    value: 50,
     label: (
-      <>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          style={{ position: "absolute", left: -75, top: -40 }}
-        >
-          <Box marginRight={4} style={{ backgroundColor: "red" }}>
-            2017
-          </Box>
-          {/* <Box width={60}></Box> */}
-          <Box marginLeft={4} style={{ backgroundColor: "red" }}>
-            <p>GEC Gandhinagar</p>
-            <p>GEC Gandhinagar</p>
-          </Box>
-        </Box>
-      </>
+      <ProfileList
+        year="Nov.2018 to Jan.2020"
+        field="Front End Developer"
+        college="(Digital Science Web Technologies)"
+        mark="Ahmedabad, India"
+      />
     ),
-  },
-  {
-    value: 75,
-    label: <h2>World</h2>,
-  },
-
-  {
-    value: 90,
-    label: <h2>Nidhi</h2>,
   },
 ];
 const Experience = (props) => {
@@ -47,14 +40,9 @@ const Experience = (props) => {
   return (
     <>
       <TabPanel value={props.value} index={props.index}>
-        <Box
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          style={{ textAlign: "center" }}
-        >
+        <Box direction="row" style={{ textAlign: "center" }} marginRight={-3}>
           <div className={classes.root}>
-            <Slider
+            <PrettoSlider
               orientation="vertical"
               min={0}
               max={100}
