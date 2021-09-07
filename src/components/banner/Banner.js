@@ -12,7 +12,7 @@ const Banner = () => {
           width: "100%",
           backgroundImage:
             "linear-gradient(90deg, rgb(118, 109, 255) 0%, rgb(136, 243, 255) 100%)",
-          marginBottom: "200px",
+          marginBottom: "50px",
         }}
       >
         <BannerCard />

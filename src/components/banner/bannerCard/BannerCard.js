@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 1170,
     position: "relative",
-    bottom: "-200px",
+    bottom: "-50px",
     margin: "0 auto",
     minHeight: 400,
     padding: "40px",
