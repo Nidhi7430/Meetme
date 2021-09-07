@@ -14,7 +14,7 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import linkedin from "../../../images/linkedin.png";
 import github from "../../../images/github.png";
 import portfolio1 from "../../../images/portfolio1.jpg";
-import BannerCardList from "./bannerCardList/BannerCardList";
+import BannerCardList from "../bannerCardList/BannerCardList";
 
 const useStyles = makeStyles({
   root: {

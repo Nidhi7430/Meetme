@@ -1,5 +1,10 @@
 import React from "react";
 import { Box } from "@material-ui/core";
+// import WorkIcon from "@material-ui/icons/Work";
+import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
+import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
+import SchoolOutlinedIcon from "@material-ui/icons/SchoolOutlined";
+import DescriptionIcon from "@material-ui/icons/Description";
 
 const ProfileList = (props) => {
   return (
@@ -17,10 +22,36 @@ const ProfileList = (props) => {
           <h3 style={{ margin: "5px 0", textTransform: "uppercase" }}>
             {props.field}
           </h3>
-          <p style={{ margin: "5px 0" }}>{props.college}</p>
-          <p style={{ margin: "5px 0" }}>{props.mark}</p>
-          <p style={{ margin: "5px 0" }}>{props.mark1}</p>
-          <p style={{ margin: "5px 0" }}>{props.mark2}</p>
+          {props.company && (
+            <Box display="flex" alignItems="center">
+              <WorkOutlineOutlinedIcon
+                fontSize="small"
+                style={{ marginRight: 7 }}
+              />
+              <p style={{ margin: "5px 0" }}>{props.company}</p>
+            </Box>
+          )}
+          {props.location && (
+            <Box display="flex" alignItems="center">
+              <LocationOnOutlinedIcon
+                fontSize="small"
+                style={{ marginRight: 7 }}
+              />
+              <p style={{ margin: "5px 0" }}>{props.location}</p>
+            </Box>
+          )}
+          {props.college && (
+            <Box display="flex" alignItems="center">
+              <SchoolOutlinedIcon fontSize="small" style={{ marginRight: 7 }} />
+              <p style={{ margin: "5px 0" }}>{props.college}</p>
+            </Box>
+          )}
+          {props.result && (
+            <Box display="flex" alignItems="center">
+              <DescriptionIcon fontSize="small" style={{ marginRight: 7 }} />
+              <p style={{ margin: "5px 0" }}>{props.result}</p>
+            </Box>
+          )}
         </Box>
       </Box>
     </>
