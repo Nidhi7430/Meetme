@@ -18,7 +18,7 @@ import BannerCardList from "../bannerCardList/BannerCardList";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 1170,
+    // maxWidth: 1170,
     position: "relative",
     bottom: "-50px",
     margin: "0 auto",

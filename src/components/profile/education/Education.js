@@ -16,7 +16,7 @@ const marks = [
       <ProfileList
         year="2011"
         field="S.S.C"
-        college="(M.B.Patel High School (G.S.E.B))"
+        college="M.B.Patel High School (G.S.E.B)"
         result="Percentile Rank : 99.54"
       />
     ),
@@ -27,7 +27,7 @@ const marks = [
       <ProfileList
         year="2013"
         field="H.S.C (science)"
-        college="(M.B.Patel High School (G.S.H.E.B))"
+        college="M.B.Patel High School (G.S.H.E.B)"
         result="Percentile Rank : 76.42"
       />
     ),
@@ -39,7 +39,7 @@ const marks = [
       <ProfileList
         year="2017"
         field="Bachelor of Engineering : I.T"
-        college="(Vishwakarma Government Engineering College (GTU))"
+        college="Vishwakarma Government Engineering College (GTU)"
         result="Aggregate : 7.73"
       />
     ),

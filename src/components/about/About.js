@@ -29,14 +29,28 @@ const About = () => {
                 exercise is called the Dickens Pattern (with reference to the
                 ghost showing Scrooge some different futures)
               </Box>
+              <Box>
+                <Box component="h3">My Typing speed:</Box>
+                <a
+                  href="http://keyhero.com/profile/nidhi74/?ba"
+                  title="nidhi74's typing test profile"
+                  target="_blank"
+                >
+                  <img
+                    src="https://www.keyhero.com/static//badges/1462/typing-test-438657.png"
+                    alt="nidhi74's typing test WPM"
+                    style={{ verticalAlign: "middle" }}
+                  />
+                </a>
+              </Box>
             </Typography>
           </Grid>
           <Grid item xs={12} sm={7}>
             <Box pl={12} pt={1}>
               <AboutSkill title="HTML5 and CSS3" value="95" />
               <AboutSkill title="Bootstrap" value="95" />
-              <AboutSkill title="JavaScript" value="25" />
-              <AboutSkill title="ReactJs" value="10" />
+              <AboutSkill title="JavaScript" value="45" />
+              <AboutSkill title="ReactJs" value="50" />
             </Box>
           </Grid>
         </Grid>
