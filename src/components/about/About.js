@@ -35,6 +35,7 @@ const About = () => {
                   href="http://keyhero.com/profile/nidhi74/?ba"
                   title="nidhi74's typing test profile"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <img
                     src="https://www.keyhero.com/static//badges/1462/typing-test-438657.png"
