@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     bottom: "-50px",
     margin: "0 auto",
     minHeight: 400,
-    padding: "40px",
+    padding: "20px",
     boxShadow: "0 0 10px 0 rgb(153,153,153)",
     borderRadius: "12px",
   },
@@ -62,84 +62,84 @@ const BannerCard = () => {
               </Box>
             </Grid>
             <Grid item xs={12} sm={5}>
-              <Box pt={4} pl={6}>
-                <CardContent>
-                  <Typography component="div">
-                    <Box
-                      fontSize="subtitle1.fontSize"
-                      color="textPrimary"
-                      style={{ textTransform: "uppercase" }}
-                      letterSpacing={2.1}
-                    >
-                      Hello everybody, i am
-                    </Box>
-                    <Box fontSize="h2.fontSize" fontWeight={500}>
-                      Nidhi Patel
-                    </Box>
-                    <Box
-                      fontSize="h6.fontSize"
-                      color="textPrimary"
-                      style={{ textTransform: "uppercase" }}
-                      letterSpacing={2.1}
-                    >
-                      Frontend Developer
-                    </Box>
-                    <Box
-                      fontSize="body2.fontSize"
-                      color="textPrimary"
-                      letterSpacing={1.5}
-                      lineHeight={1.5}
-                      my={3}
-                    >
-                      You will begin to realise why this exercise is called the
-                      Dickens Pattern (with reference to the ghost showing
-                      Scrooge some different futures).You will begin to realise
-                      why this exercise is called the Dickens Pattern (with
-                      reference to the ghost showing Scrooge some different
-                      futures).
-                    </Box>
-                  </Typography>
-                  <List component="nav" aria-label="contacts">
-                    <BannerCardList
-                      linkHref="mailto:nidhipatel439@gmail.com"
-                      text="nidhipatel439@gmail.com"
-                      icon={<MailOutlineIcon color="primary" />}
-                    />
-                    <BannerCardList
-                      linkHref="https://www.linkedin.com/in/nidhi-patel-374b89b8"
-                      text="linkedin.com/nidhipatel"
-                      icon={
-                        <img
-                          src={linkedin}
-                          style={{
-                            width: "20px",
-                            height: "20px",
-                            position: "relative",
-                            top: "-2px",
-                            left: "3px",
-                          }}
-                          alt="linkedin"
-                        />
-                      }
-                    />
-                    <BannerCardList
-                      linkHref="https://github.com/Nidhi7430"
-                      text="github.com/nidhipatel"
-                      icon={
-                        <img
-                          src={github}
-                          style={{
-                            width: "20px",
-                            height: "20px",
-                            position: "relative",
-                            left: "3px",
-                          }}
-                          alt="github"
-                        />
-                      }
-                    />
-                  </List>
-                </CardContent>
+              <Box pt={3}>
+                {/* <CardContent> */}
+                <Typography
+                  variant="subtitle1"
+                  color="textPrimary"
+                  style={{ letterSpacing: "2.1px" }}
+                >
+                  Hello everybody, i am
+                </Typography>
+                <Typography
+                  variant="h3"
+                  style={{ padding: "15px 0 10px", letterSpacing: "1.4px" }}
+                >
+                  Nidhi Patel
+                </Typography>
+                <Typography
+                  variant="h6"
+                  color="textPrimary"
+                  style={{ letterSpacing: "2.1px" }}
+                >
+                  Frontend Developer
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="textPrimary"
+                  style={{
+                    padding: "10px 0",
+                    letterSpacing: "2.1px",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  You will begin to realise why this exercise is called the
+                  Dickens Pattern (with reference to the ghost showing Scrooge
+                  some different futures).You will begin to realise why this
+                  exercise is called the Dickens Pattern (with reference to the
+                  ghost showing Scrooge some different futures).
+                </Typography>
+                <List component="nav" aria-label="contacts">
+                  <BannerCardList
+                    linkHref="mailto:nidhipatel439@gmail.com"
+                    text="nidhipatel439@gmail.com"
+                    icon={<MailOutlineIcon color="primary" />}
+                  />
+                  <BannerCardList
+                    linkHref="https://www.linkedin.com/in/nidhi-patel-374b89b8"
+                    text="linkedin.com/nidhipatel"
+                    icon={
+                      <img
+                        src={linkedin}
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          position: "relative",
+                          top: "-2px",
+                          left: "3px",
+                        }}
+                        alt="linkedin"
+                      />
+                    }
+                  />
+                  <BannerCardList
+                    linkHref="https://github.com/Nidhi7430"
+                    text="github.com/nidhipatel"
+                    icon={
+                      <img
+                        src={github}
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          position: "relative",
+                          left: "3px",
+                        }}
+                        alt="github"
+                      />
+                    }
+                  />
+                </List>
+                {/* </CardContent> */}
               </Box>
             </Grid>
           </Grid>

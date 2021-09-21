@@ -19,7 +19,13 @@ const ProfileList = (props) => {
           {props.year}
         </Box>
         <Box marginLeft={4} textAlign="left">
-          <h3 style={{ margin: "5px 0", textTransform: "uppercase" }}>
+          <h3
+            style={{
+              margin: "5px 0",
+              textTransform: "uppercase",
+              whiteSpace: "normal",
+            }}
+          >
             {props.field}
           </h3>
           {props.company && (
@@ -28,7 +34,14 @@ const ProfileList = (props) => {
                 fontSize="small"
                 style={{ marginRight: 7 }}
               />
-              <p style={{ margin: "5px 0" }}>{props.company}</p>
+              <p
+                style={{
+                  margin: "5px 0",
+                  whiteSpace: "normal",
+                }}
+              >
+                {props.company}
+              </p>
             </Box>
           )}
           {props.location && (
@@ -37,19 +50,25 @@ const ProfileList = (props) => {
                 fontSize="small"
                 style={{ marginRight: 7 }}
               />
-              <p style={{ margin: "5px 0" }}>{props.location}</p>
+              <p style={{ margin: "5px 0", whiteSpace: "normal" }}>
+                {props.location}
+              </p>
             </Box>
           )}
           {props.college && (
             <Box display="flex" alignItems="center">
               <SchoolOutlinedIcon fontSize="small" style={{ marginRight: 7 }} />
-              <p style={{ margin: "5px 0" }}>{props.college}</p>
+              <p style={{ margin: "5px 0", whiteSpace: "normal" }}>
+                {props.college}
+              </p>
             </Box>
           )}
           {props.result && (
             <Box display="flex" alignItems="center">
               <DescriptionIcon fontSize="small" style={{ marginRight: 7 }} />
-              <p style={{ margin: "5px 0" }}>{props.result}</p>
+              <p style={{ margin: "5px 0", whiteSpace: "normal" }}>
+                {props.result}
+              </p>
             </Box>
           )}
         </Box>

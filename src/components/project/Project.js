@@ -28,7 +28,7 @@ const Project = () => {
   const classes = useStyles();
   return (
     <>
-      <Container style={{ padding: 100 }}>
+      <Container style={{ padding: "100px 0" }}>
         <Box
           fontSize="h4.fontSize"
           fontWeight={500}

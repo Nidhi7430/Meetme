@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import quotes from "./QuoteDB";
 import Carousel from "react-material-ui-carousel";
-import { Container, Box } from "@material-ui/core";
+import { Container, Box, Typography, Grid } from "@material-ui/core";
 
 const Quotes = () => {
   const [quote, setQuote] = useState([quotes[0], quotes[1], quotes[2]]);
@@ -17,35 +17,42 @@ const Quotes = () => {
   }, []);
   return (
     <>
-      <Box style={{ backgroundColor: "#f9f9ff" }}>
-        <Container style={{ padding: 100 }}>
-          <Box
-            fontSize="h4.fontSize"
-            fontWeight={500}
-            style={{ textTransform: "uppercase" }}
-            textAlign="center"
-            pb={5}
+      <Box style={{ backgroundColor: "#f9f9ff" }} py={8}>
+        <Container>
+          <Typography
+            variant="h4"
+            align="center"
+            style={{
+              textTransform: "uppercase",
+              fontWeight: 500,
+              paddingBottom: 25,
+            }}
           >
             Quotes
-          </Box>
+          </Typography>
           <Carousel navButtonsAlwaysInvisible>
             {quote.map((q) => {
               return (
-                <Box
-                  style={{ backgroundColor: "#fff", verticalAlign: "middle" }}
-                  width={600}
-                  margin="0 auto"
-                  textAlign="center"
-                  border="1px solid #eeeeee"
-                  borderRadius={8}
-                  px={3}
-                  lineHeight={1.8}
-                  boxShadow=" 1px 3px 4px 0 rgb(153 ,153,153)"
-                  height={130}
-                >
-                  <p>{q.quote}</p>
-                  <p>-{q.author}</p>
-                </Box>
+                <Grid container justifyContent="center">
+                  <Grid item md={6} sm={9} xs={12}>
+                    <Box
+                      style={{
+                        backgroundColor: "#fff",
+                      }}
+                      borderRadius={8}
+                      boxShadow=" 1px 2px 4px 2px #888888"
+                      minHeight={130}
+                      textAlign="center"
+                      border="1px solid #888"
+                      px={6}
+                    >
+                      <Typography style={{ padding: "15px 0" }}>
+                        {q.quote}
+                      </Typography>
+                      <Typography>-{q.author}</Typography>
+                    </Box>
+                  </Grid>
+                </Grid>
               );
             })}
           </Carousel>
