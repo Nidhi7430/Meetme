@@ -22,7 +22,7 @@ const About = () => {
                   style={{
                     letterSpacing: "2.1px",
                     lineHeight: 1.6,
-                    maxWidth: "500px",
+                    maxWidth: "90%",
                     padding: "20px 0",
                   }}
                 >

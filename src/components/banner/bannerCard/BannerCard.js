@@ -49,7 +49,7 @@ const BannerCard = () => {
       <Container>
         <Card className={classes.root}>
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={7}>
+            <Grid item xs={12} md={7}>
               <Box>
                 <CardMedia
                   component="img"
@@ -60,7 +60,7 @@ const BannerCard = () => {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} sm={5}>
+            <Grid item xs={12} md={5}>
               <Box pt={3}>
                 {/* <CardContent> */}
                 <Typography
