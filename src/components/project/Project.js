@@ -1,65 +1,56 @@
 import React from "react";
 import {
   Container,
-  Box,
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardActions,
-  makeStyles,
   Grid,
-  Link,
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Button,
+  Box,
 } from "@material-ui/core";
 import project from "../../images/project.webp";
-const useStyles = makeStyles({
-  media: {
-    height: 250,
-    zIndex: -3,
-    "&:hover": {
-      backgroundColor: "red",
-      // opacity: "0.2",
-    },
-  },
-  action: {
-    position: "relative",
-  },
-});
+
 const Project = () => {
-  const classes = useStyles();
   return (
     <>
-      <Container style={{ padding: "100px 0" }}>
-        <Box
-          fontSize="h4.fontSize"
-          fontWeight={500}
-          style={{ textTransform: "uppercase" }}
-          textAlign="center"
-          pb={5}
-        >
-          Our featured project
-        </Box>
-        <Grid container style={{ justifyContent: "center" }}>
-          <Grid item sm={4} xs={12}>
-            <Card>
-              <CardActionArea className={classes.action}>
+      <Box py={8}>
+        <Container>
+          <Typography
+            variant="h4"
+            align="center"
+            style={{
+              fontWeight: 500,
+              textTransform: "uppercase",
+              paddingBottom: 25,
+            }}
+          >
+            Our featured project
+          </Typography>
+          <Grid container justifyContent="center">
+            <Grid item sm={4} xs={12}>
+              <Card>
                 <CardMedia
+                  component="img"
+                  height="200"
                   image={project}
-                  title="Contemplative Reptile"
-                  // component="img"
-                  className={classes.media}
-                >
-                  <Link href="https://www.toysuniverse.in/" target="_blank">
-                    link
-                  </Link>
-                </CardMedia>
-              </CardActionArea>
-              <CardActions style={{ justifyContent: "center" }}>
-                <h3 style={{ margin: 0 }}>Toys Universe</h3>
-              </CardActions>
-            </Card>
+                  alt="toysuniverse"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5">
+                    Toys Universe
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small">View Source</Button>
+                  <Button size="small">Visit Website</Button>
+                </CardActions>
+              </Card>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Box>
     </>
   );
 };
